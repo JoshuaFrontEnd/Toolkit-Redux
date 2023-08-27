@@ -1,6 +1,6 @@
 # Toolkit Redux
 
-Proyecto para poner en practica los siguientes conceptos:
+Proyecto en React para poner en practica los siguientes conceptos:
 
 - Redux
 - Store
