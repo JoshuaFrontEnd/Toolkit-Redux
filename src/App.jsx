@@ -1,10 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useSelector } from 'react-redux';
+
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  // Para leer datos del store usamos el Hook de React Redux 'useSelector'
+  const { counter } = useSelector( state => state.counter );
+
+  console.log( counter );
+
 
   return (
     <>
@@ -18,12 +24,12 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button onClick={() => setCount(() => {} )}>
+          count is { counter }
         </button>
       </div>
     </>
   )
 }
 
-export default App
+export default App;
