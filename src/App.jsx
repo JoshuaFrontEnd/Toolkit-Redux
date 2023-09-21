@@ -7,10 +7,11 @@ import { increment } from './store/slices/counter';
 
 function App() {
 
-  // Para leer datos del store usamos el Hook de React Redux 'useSelector'
+  // Para leer el "state" (datos) del "store" usamos el Hook de React Redux "useSelector" y para acceder a un "Reducer" especifico del estado, se hace de la siguiente forma:
   const { counter } = useSelector( state => state.counter );
-  const dispatch = useDispatch();
 
+  // Para poder acceder al "dispatcher" necesito usar el Hook de React Redux "useDispatch"
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -24,6 +25,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
+        {/* Acá estoy despachando al "dispatcher" la "action increment" */}
         <button onClick={() => dispatch( increment() )}>
           count is { counter }
         </button>
