@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
-import { increment } from './store/slices/counter';
+import { increment, decrement, incrementByTwo } from './store/slices/counter';
 
 function App() {
 
@@ -23,11 +23,17 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>count is { counter }</h1>
       <div className="card">
         {/* Acá estoy despachando al "dispatcher" la "action increment" */}
         <button onClick={() => dispatch( increment() )}>
-          count is { counter }
+          Increment
+        </button>
+        <button onClick={() => dispatch( decrement() )}>
+          Decrement
+        </button>
+        <button onClick={() => dispatch( incrementByTwo(2) )}>
+          Increment by 2
         </button>
       </div>
     </>

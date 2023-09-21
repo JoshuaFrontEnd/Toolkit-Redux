@@ -7,19 +7,27 @@ export const counterSlice = createSlice({
   },
   reducers: {
     // Acá estoy creando una "action" a ejecutar
-    increment: (state) => {
+    increment: ( state ) => {
       // Redux Toolkit allows us to write "mutating" logic in reducers. It
       // doesn't actually mutate the state because it uses the Immer library,
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
       state.counter += 1
+    },
+    decrement: ( state ) => {
+      state.counter -= 1
+    },
+    incrementByTwo: ( state, action ) => {
+      console.log( action );
+      state.counter += action.payload;
     }
   },
 })
 
 // Action creators are generated for each case reducer function
 // Acá estoy exportando la "action" para poder utilizarla después
-export const { increment } = counterSlice.actions;
+// Las acciones exportadas son generadas por las funciones creadas en el "reducers"
+export const { increment, decrement, incrementByTwo } = counterSlice.actions;
 
 
 
@@ -34,4 +42,12 @@ export const { increment } = counterSlice.actions;
   - El nombre del slice.
   - Un objeto que contiene las funciones de reducción para cada acción.
   - Un objeto que contiene los selectores para cada valor de estado.
+
+  PAYLOAD
+
+  Action payload en React es la información que se envía a un reducer para actualizar el estado de la aplicación. Es una propiedad de la acción que se puede utilizar para pasar cualquier tipo de datos, como objetos, arrays o cadenas.
+
+  Por ejemplo, si tienes una aplicación de comercio electrónico, podrías utilizar un payload para enviar al reducer los datos de un producto que el usuario ha añadido a su carrito. El reducer podría entonces utilizar estos datos para actualizar el estado de la aplicación y mostrar el producto en el carrito de compras del usuario.
+
+  Para crear un payload, simplemente agrega una propiedad payload a la acción. El valor de la propiedad payload puede ser cualquier tipo de datos que necesites.
 ---------------------------------------------------------------- */
