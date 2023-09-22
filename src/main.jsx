@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
+import App from './App';
 import './index.css';
 // Para "proveer" el "store" a la app, se importa desde React/Redux un "Provider"
 import { Provider } from 'react-redux';
 // Importo el "store" que cree para esta app
 import { store } from './store';
+import { PokemonApp } from './PokemonApp';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* Para implementar el "proveedor" de mi "store" de manera global se hace de la siguiente forma: */}
     <Provider store={ store }>
-      <App />
+      {/* <App /> */}
+      <PokemonApp />
     </Provider>
   </React.StrictMode>,
 )
