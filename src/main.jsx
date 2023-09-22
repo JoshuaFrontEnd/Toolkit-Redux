@@ -7,13 +7,15 @@ import { Provider } from 'react-redux';
 // Importo el "store" que cree para esta app
 import { store } from './store';
 import { PokemonApp } from './PokemonApp';
+import { TodoApp } from './TodoApp';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* Para implementar el "proveedor" de mi "store" de manera global se hace de la siguiente forma: */}
     <Provider store={ store }>
       {/* <App /> */}
-      <PokemonApp />
+      {/* <PokemonApp /> */}
+      <TodoApp />
     </Provider>
   </React.StrictMode>,
 )
