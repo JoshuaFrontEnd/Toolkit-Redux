@@ -15,7 +15,13 @@ export const pokemonSlice = createSlice({
       state.isLoading = true;
     },
     setPokemons: ( state, action ) => {
-      console.log( action );
+      // Como ya cargue los pokemons los dejo de cargar
+      state.isLoading = false;
+
+      // Configuro el "Payload" (action)
+      state.page = action.payload.page;
+      state.pokemons = action.payload.pokemons;
+
     }
   }
 });
