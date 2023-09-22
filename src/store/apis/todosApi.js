@@ -18,4 +18,5 @@ export const todosApi = createApi({
 
 })
 
+// RTK Query convierte los reducers creados en los endpoints a custom Hooks
 export const { useGetTodosQuery } = todosApi;
