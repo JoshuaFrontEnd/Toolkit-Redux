@@ -12,6 +12,10 @@ export const todosApi = createApi({
 
     getTodos: builder.query({
       query: () => '/todos'
+    }),
+
+    getTodoId: builder.query({
+      query: ( todoId ) => `/todos/${ todoId }`
     })
 
   })
@@ -19,4 +23,4 @@ export const todosApi = createApi({
 })
 
 // RTK Query convierte los reducers creados en los endpoints a custom Hooks
-export const { useGetTodosQuery } = todosApi;
+export const { useGetTodosQuery, useGetTodoIdQuery } = todosApi;
